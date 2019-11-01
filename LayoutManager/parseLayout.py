@@ -1,6 +1,14 @@
+import os
+
 def parseLayoutsCompressed(file_name):
     layouts = []
-    with open(file_name , "r") as f:
+
+    fileDir = os.path.dirname(os.path.realpath('__file__'))
+
+    #For accessing the file in a folder contained in the current folder
+    absoluteDir = os.path.join(fileDir, file_name)
+
+    with open(absoluteDir , "r") as f:
         rows, cols , lastCols = [int(x) for x in next(f).split()]
         for line in f: # read rest of lines
             layouts.append([int(x) for x in line.split()])
