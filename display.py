@@ -1,4 +1,4 @@
-from parseLayout import *
+from LayoutManager.parseLayout import *
 import RPi.GPIO as GPIO
 
 import Adafruit_WS2801 as AF
@@ -7,7 +7,7 @@ import Adafruit_GPIO.SPI as SPI
 class Display:
     def __init__(self , isDebug):
         self.compressedLayouts , self.rows , self.cols , self.lastCols = parseLayoutsCompressed("compressed_layouts.txt")
-        self.layoutLetters = parseLayoutLetters("layout_letters.txt")
+        self.layoutLetters = parseLayoutLetters("LayoutManager/layout_letters.txt")
         if isDebug:
             self.displayFun = self.displayCmd
         else:

@@ -1,9 +1,10 @@
 import sys
 import time
+import pytz
 from datetime import datetime
 from display import *
 
-currTime = datetime.now()
+currTime = datetime.now(tz = pytz.timezone('Europe/Warsaw'))
 isOn = True
 
 my_disp = Display(isDebug = False)
