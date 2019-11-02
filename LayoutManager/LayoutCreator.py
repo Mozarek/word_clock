@@ -43,7 +43,7 @@ def createLayout(h, m):
     for i in range(0,m%5):
         setLetters(11 , i , 1 , new_layout)
 
-    if m > 30:
+    if m >= 35:
         h = (h+1)%12
     
     if h==0:
