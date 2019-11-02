@@ -3,7 +3,7 @@ import os
 def parseLayoutsCompressed(file_name):
     layouts = []
 
-    fileDir = os.path.dirname(os.path.realpath('__file__'))
+    fileDir = os.path.dirname(os.path.abspath(__file__))
 
     #For accessing the file in a folder contained in the current folder
     absoluteDir = os.path.join(fileDir, file_name)

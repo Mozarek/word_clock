@@ -6,9 +6,9 @@ import Adafruit_GPIO.SPI as SPI
 
 class Display:
     def __init__(self , isDebug):
-        self.compressedLayouts , self.rows , self.cols , self.lastCols = parseLayoutsCompressed("LayoutManager/compressed_layouts.txt")
-        self.layoutLetters = parseLayoutLetters("LayoutManager/layout_letters.txt")
+        self.compressedLayouts , self.rows , self.cols , self.lastCols = parseLayoutsCompressed("compressed_layouts.txt")
         if isDebug:
+            self.layoutLetters = parseLayoutLetters("layout_letters.txt")
             self.displayFun = self.displayCmd
         else:
             self.pixelCount = 126

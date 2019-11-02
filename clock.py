@@ -4,7 +4,8 @@ import pytz
 from datetime import datetime
 from display import *
 
-currTime = datetime.now(tz = pytz.timezone('Europe/Warsaw'))
+timeZone = pytz.timezone('Europe/Warsaw')
+currTime = datetime.now(tz = timeZone)
 isOn = True
 
 my_disp = Display(isDebug = False)
@@ -12,7 +13,7 @@ my_disp.updateDisplay(currTime.hour , currTime.minute)
 
 while isOn:
     if currTime.minute != datetime.now().minute:
-        currTime = datetime.now()
+        currTime = datetime.now(tz = timeZone)
         h = currTime.hour
         m = currTime.minute
         my_disp.updateDisplay(h,m)
